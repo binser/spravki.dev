@@ -1,0 +1,26 @@
+
+<section id="popylar">
+    <div class="container">
+        <h1>Популярные справки</h1>
+        <div class="row cf">
+            {% for item in Spravki %}
+            <div class="col-md-4 col-sm-6">
+                <div class="spr">
+                    <h3>{{ item.title }}</h3>
+                    <div class="clg">
+                        <div class="item">
+                            <img src={{item.src}} alt={{ item.alt }}>
+                            <div class="desc">
+                                <p class="prise">{{ item.prise }} руб</p>
+                            </div>
+                        </div>
+                        <img src="/images/spr_bg.png" alt="background">
+                    </div>
+
+                    <a href="#myModal" role="button" class="button" data-toggle="modal">Заказать</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,22 @@
+{% extends 'MainBundle::base.html.twig' %}
+
+{% block title %}{% endblock %}
+{% block description %}{% endblock %}
+{% block keywords %}{% endblock %}
+
+{% block content %}
+    <section id="stuff">
+        <div class="container">
+            <h1>Наши сотрудники</h1>
+            <div class="row cf">
+                {% for item in stuff %}
+                    <div class="col-md-15">
+                        <h3>{{ item.name }}</h3>
+                        <img src="{{item.src}}" alt="Врач">
+                        <h3>{{ item.post }}</h3>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
