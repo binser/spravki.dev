@@ -2,7 +2,11 @@
 
 namespace MainBundle\Controller;
 
+use MainBundle\Entity\Order;
+use MainBundle\Form\OrderType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
@@ -47,7 +51,11 @@ class DefaultController extends Controller
 
     public function spravkaAction($spravkaUrl)
     {
-        $spravka = $this->getDoctrine()->getRepository('MainBundle:Document')->findBy(array('url' => $spravkaUrl));
+        $spravka = $this->getDoctrine()->getRepository('MainBundle:Document')->findOneBy(array('url' => $spravkaUrl));
+        if (!$spravka) {
+            return $this->createNotFoundException();
+        }
+
         return $this->render('MainBundle::spravka.html.twig', array(
             'popular' => $this->getPopularDocuments(),
             'spravka' => $spravka
@@ -57,5 +65,25 @@ class DefaultController extends Controller
     private function getPopularDocuments()
     {
         return $this->getDoctrine()->getRepository('MainBundle:Document')->getPopular();
+    }
+
+    public function popularAction(Request $request)
+    {
+        $order = new Order();
+        $form = $this->createForm(new OrderType(), $order);
+        $form->handleRequest($request);
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($order);
+            $em->flush();
+
+            return new RedirectResponse($this->generateUrl('main_price'));
+        }
+
+        $popular = $this->getDoctrine()->getRepository('MainBundle:Document')->getPopular();
+        return $this->render('MainBundle:Common:popylar.html.twig', array(
+            'popular' => $popular,
+            'form' => $form->createView()
+        ));
     }
 }

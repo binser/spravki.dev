@@ -23,3 +23,97 @@
         </div>
     </div>
 </section>
+
+{% block modal %}
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Заголовок модального окна -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                </div>
+
+                <div class="modal-body">
+                    <section id="orders">
+                        <h1>Оформление заказа</h1>
+                        <p>Для заказа позвоните по номеру 8 495 969 47 07 или заполните форму ниже и мы свяжемся с вами.</p>
+                        <div class="form">
+                            {% form_theme form 'bootstrap_3_layout.html.twig' %}
+                            {{ form_start(form) }}
+
+                            {{ form_label(form.fio) }} *
+                            {{ form_errors(form.fio) }}
+                            {{ form_widget(form.fio) }}
+
+                            {{ form_label(form.address) }}
+                            {{ form_errors(form.address) }}
+                            {{ form_widget(form.address) }}
+
+                            {{ form_label(form.email) }} *
+                            {{ form_errors(form.email) }}
+                            {{ form_widget(form.email) }}
+
+                            {{ form_label(form.phone) }}
+                            {{ form_errors(form.phone) }}
+                            {{ form_widget(form.phone) }}
+
+                            {{ form_label(form.subject) }}
+                            {{ form_errors(form.subject) }}
+                            {{ form_widget(form.subject) }}
+
+                            {{ form_label(form.message) }} *
+                            {{ form_errors(form.message) }}
+                            {{ form_widget(form.message) }}
+
+                            {{ form_label(form.file) }}
+                            {{ form_errors(form.file) }}
+                            {{ form_widget(form.file) }}
+
+                            <button type="submit" class="btn btn-success">Отправить</button>
+
+                            {{ form_end(form) }}
+                            {#<form action="mail.php" method="post" autocomplete="on">
+                                <label for="name">
+                                    Имя: *
+                                    <input type="input" id="name">
+                                </label>
+
+                                <label for="address">
+                                    Адрес: *
+                                    <input type="input" id="address">
+                                </label>
+
+                                <label for="email">
+                                    E-mail адрес: *
+                                    <input type="email" id="email">
+                                </label>
+
+                                <label for="number">
+                                    Телефон:
+                                    <input type="number" id="number" >
+                                </label>
+
+                                <label for="order">
+                                    Тема: *
+                                    <input type="input" id="order" >
+                                </label>
+
+                                <label for="message">
+                                    Сообщение: *
+                                    <textarea placeholder="Отправьте нам сообщение..." id="message"></textarea>
+                                </label>
+
+                                <label for="file">
+                                    Прикрепить файл:
+                                    <input type="file" id="file" >
+                                </label>
+
+                                <input type="submit" value="Отправить" class="button">
+                            </form>#}
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
