@@ -72,6 +72,11 @@ class Document
     protected $category;
 
     /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    protected $text;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -309,5 +314,28 @@ class Document
     public function getCategory()
     {
         return $this->category;
+    }
+
+    /**
+     * Set text
+     *
+     * @param string $text
+     * @return Document
+     */
+    public function setText($text)
+    {
+        $this->text = $text;
+
+        return $this;
+    }
+
+    /**
+     * Get text
+     *
+     * @return string 
+     */
+    public function getText()
+    {
+        return $this->text;
     }
 }

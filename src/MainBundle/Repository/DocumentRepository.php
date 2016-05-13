@@ -12,4 +12,8 @@ use Doctrine\ORM\EntityRepository;
  */
 class DocumentRepository extends EntityRepository
 {
+    public function getPopular()
+    {
+        return $this->findBy(array('popular' => true));
+    }
 }

@@ -9,16 +9,18 @@
         <div class="container">
             <div class="table">
                 <h1>Прайс-лист</h1>
-                <h3>Для работнинков</h3>
-                <table>
-                    {% for item in pricetable %}
+                {% for category in categories %}
+                    <h3>{{ category.name }}</h3>
 
-                        <tr>
-                            <td><a href="#">{{ item.name }}</a></td>
-                            <td>{{ item.price }}</td>
-                        </tr>
-                    {% endfor %}
-                </table>
+                    <table width="100%">
+                        {% for document in category.documents %}
+                            <tr>
+                                <td><a href="{{ path('main_spravka', {'spravkaUrl': document.url}) }}">{{ document.name }}</a></td>
+                                <td>{{ document.price }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% endfor %}
             </div>
         </div>
     </section>

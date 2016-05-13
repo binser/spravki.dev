@@ -1,3 +1,23 @@
 main_homepage:
     path:     /
     defaults: { _controller: MainBundle:Default:index }
+
+main_contact:
+    path:     /contacts
+    defaults: { _controller: MainBundle:Default:contacts }
+
+main_delivery:
+    path:     /delivery
+    defaults: { _controller: MainBundle:Default:delivery }
+
+main_price:
+    path:     /price
+    defaults: { _controller: MainBundle:Default:price }
+
+main_staff:
+    path:     /staff
+    defaults: { _controller: MainBundle:Default:staff }
+
+main_spravka:
+    path:     /{spravkaUrl}
+    defaults: { _controller: MainBundle:Default:spravka }

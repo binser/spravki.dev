@@ -1,20 +1,19 @@
-
 <section id="popylar">
     <div class="container">
         <h1>Популярные справки</h1>
         <div class="row cf">
-            {% for item in Spravki %}
+            {% for item in popular %}
             <div class="col-md-4 col-sm-6">
                 <div class="spr">
-                    <h3>{{ item.title }}</h3>
+                    <h3>{{ item.name }}</h3>
                     <div class="clg">
                         <div class="item">
-                            <img src={{item.src}} alt={{ item.alt }}>
+                            <img src="{{ asset(item.image) }}" alt="{{ item.name }}">
                             <div class="desc">
-                                <p class="prise">{{ item.prise }} руб</p>
+                                <p class="prise">{{ item.price }} руб</p>
                             </div>
                         </div>
-                        <img src="/images/spr_bg.png" alt="background">
+                        <img src="{{ asset('bundles/main/images/spr_bg.png') }}" alt="background">
                     </div>
 
                     <a href="#myModal" role="button" class="button" data-toggle="modal">Заказать</a>

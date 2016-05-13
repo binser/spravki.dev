@@ -20,7 +20,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="slide-img">
-                                <img src="/images/slide1.jpg" alt="...">
+                                <img src="{{ asset('bundles/main/images/slide1.jpg') }}" alt="...">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -35,7 +35,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="slide-img">
-                                <img src="/images/slide1.jpg" alt="...">
+                                <img src="{{ asset('bundles/main/images/slide1.jpg') }}" alt="...">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -49,7 +49,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="slide-img">
-                                <img src="/images/slide1.jpg" alt="...">
+                                <img src="{{ asset('bundles/main/images/slide1.jpg') }}" alt="...">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -135,13 +135,46 @@
             <div class="row cf">
                 <h1>Наши лицензии</h1>
                 <ul class="cf">
-                    {% for item in data.lisence %}
-                        <li class="col-md-3 col-sm-4 col-xs-6">
-                            <div class="lisences">
-                                <img src={{ item.src }} alt={{ item.alt }}>
-                            </div>
-                        </li>
-                    {% endfor %}
+                    <li class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="lisences">
+                            <img src="{{ asset('bundles/main/images/lis1.jpg') }}" alt="Лицензия">
+                        </div>
+                    </li>
+                    <li class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="lisences">
+                            <img src="{{ asset('bundles/main/images/lis2.jpg') }}" alt="Лицензия">
+                        </div>
+                    </li>
+                    <li class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="lisences">
+                            <img src="{{ asset('bundles/main/images/lis3.jpg') }}" alt="Лицензия">
+                        </div>
+                    </li>
+                    <li class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="lisences">
+                            <img src="{{ asset('bundles/main/images/lis4.jpg') }}" alt="Лицензия">
+                        </div>
+                    </li>
+                    <li class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="lisences">
+                            <img src="{{ asset('bundles/main/images/lis5.jpg') }}" alt="Лицензия">
+                        </div>
+                    </li>
+                    <li class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="lisences">
+                            <img src="{{ asset('bundles/main/images/lis6.jpg') }}" alt="Лицензия">
+                        </div>
+                    </li>
+                    <li class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="lisences">
+                            <img src="{{ asset('bundles/main/images/lis7.jpg') }}" alt="Лицензия">
+                        </div>
+                    </li>
+                    <li class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="lisences">
+                            <img src="{{ asset('bundles/main/images/lis8.jpg') }}" alt="Лицензия">
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>

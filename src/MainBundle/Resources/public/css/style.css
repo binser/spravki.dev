@@ -3120,7 +3120,7 @@ h3 {
     line-height: 18px; }
   #header .header {
     min-height: 260px;
-    background: url(../images/logo.png) no-repeat;
+    background: url(/web/bundles/main/images/logo.png) no-repeat;
     background-position: 0 85px; }
     @media screen and (min-width: 768px) {
       #header .header {
