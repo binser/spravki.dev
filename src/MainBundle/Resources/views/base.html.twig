@@ -28,6 +28,23 @@
     <script type="text/javascript" src="{{ asset('bundles/main/js/carosel.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('bundles/main/js/menu.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('bundles/main/js/modals.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/main/js/jquery.form.min.js') }}"></script>
+    <script type="text/javascript">
+        $('#form').ajaxForm({
+            success: function(data) {
+                if (!$.isEmptyObject(data)) {
+                    $.each(data, function(index, error) {
+                        var $fieldError = $('#' + index + '_error');
+                        $fieldError.text(error);
+                        $fieldError.show();
+                    });
+                } else {
+                    alert('Заказ успешно создан');
+                    $('#myModal').modal('hide');
+                }
+            }
+        });
+    </script>
 {% endblock %}
 
 {% block modal %}

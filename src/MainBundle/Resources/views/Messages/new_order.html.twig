@@ -1,0 +1,48 @@
+<table align="center" bgcolor="#f0f0f0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td style="height: 40px"></td>
+    </tr>
+    <tr>
+        <td>
+            <table cellpadding='0' cellspacing='0' width="620px" align='center' style='border-collapse:collapse; background-color: #ffffff' border="1">
+                <tr style="text-align: center; padding: 10px; font-size: 24px; height: 30px">
+                    <td colspan="2">
+                        Поступил новый заказ:
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; padding: 5px; width: 50%;">ФИО:</td>
+                    <td style="text-align: left; padding: 5px; width: 50%;">{{ fio }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; padding: 5px; width: 50%;">Адрес:</td>
+                    <td style="text-align: left; padding: 5px; width: 50%;">{{ address }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; padding: 5px; width: 50%;">E-mail:</td>
+                    <td style="text-align: left; padding: 5px; width: 50%;">{{ email }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; padding: 5px; width: 50%;">Телефон:</td>
+                    <td style="text-align: left; padding: 5px; width: 50%;">{{ phone }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; padding: 5px; width: 50%;">Тема:</td>
+                    <td style="text-align: left; padding: 5px; width: 50%;">{{ subject }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; padding: 5px; width: 50%;">Сообщение:</td>
+                    <td style="text-align: left; padding: 5px; width: 50%;">{{ message }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; padding: 5px; width: 50%;">Дата:</td>
+                    <td style="text-align: left; padding: 5px; width: 50%;">{{ date|date("Y-m-d H:i:s") }}</td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td style="height: 40px"></td>
+    </tr>
+</table>

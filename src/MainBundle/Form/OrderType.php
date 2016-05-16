@@ -30,7 +30,7 @@ class OrderType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => 'MainBundle\Entity\Order',
-            'csrf_protection' => true,
+            'csrf_protection' => false,
         ));
     }
     /**

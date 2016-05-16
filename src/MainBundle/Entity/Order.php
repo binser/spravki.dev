@@ -67,6 +67,14 @@ class Order
      */
     protected $photo;
 
+    /**
+     * @ORM\Column(name="date_create", type="datetime")
+     */
+    protected $dateCreate;
+
+    /**
+     * @Assert\Image(mimeTypesMessage="Загружать можно только изображения")
+     */
     public $file;
 
     protected function getUploadDir()
@@ -76,7 +84,7 @@ class Order
 
     protected function getUploadRootDir()
     {
-        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+        return __DIR__.'/../../../web/'.$this->getUploadDir();
     }
 
     public function getWebPath()
@@ -125,6 +133,10 @@ class Order
                 unlink($file);
             }
         }
+    }
+
+    public function __construct() {
+        $this->dateCreate = new \DateTime();
     }
 
     /**
@@ -303,5 +315,29 @@ class Order
     public function getPhoto()
     {
         return $this->photo;
+    }
+
+    /**
+     * Set dateCreate
+     *
+     * @param \DateTime $dateCreate
+     *
+     * @return Order
+     */
+    public function setDateCreate($dateCreate)
+    {
+        $this->dateCreate = $dateCreate;
+
+        return $this;
+    }
+
+    /**
+     * Get dateCreate
+     *
+     * @return \DateTime
+     */
+    public function getDateCreate()
+    {
+        return $this->dateCreate;
     }
 }

@@ -1,0 +1,14 @@
+{% extends 'MainBundle::base.html.twig' %}
+
+{% block title %}{% endblock %}
+{% block description %}{% endblock %}
+{% block keywords %}{% endblock %}
+
+{% block content %}
+    <section id="post">
+        <div class="container">
+            <h1>{{ post.title }}</h1>
+            {{ post.text|raw }}
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'MainBundle::base.html.twig' %}
+
+{% block title %}Статьи на сайте - "MSK-medspravki"{% endblock %}
+{% block description %}{% endblock %}
+{% block keywords %}{% endblock %}
+
+{% block content %}
+    <section id="posts">
+        <div class="container">
+            {% for post in posts %}
+                <h2>
+                    <a href="{{ path('main_spravka', {'url': post.url}) }}">
+                        {{ post.title }}
+                    </a>
+                </h2>
+                <br>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

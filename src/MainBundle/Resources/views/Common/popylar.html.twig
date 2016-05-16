@@ -38,78 +38,58 @@
                         <h1>Оформление заказа</h1>
                         <p>Для заказа позвоните по номеру 8 495 969 47 07 или заполните форму ниже и мы свяжемся с вами.</p>
                         <div class="form">
-                            {% form_theme form 'bootstrap_3_layout.html.twig' %}
-                            {{ form_start(form) }}
-
-                            {{ form_label(form.fio) }} *
-                            {{ form_errors(form.fio) }}
-                            {{ form_widget(form.fio) }}
-
-                            {{ form_label(form.address) }}
-                            {{ form_errors(form.address) }}
-                            {{ form_widget(form.address) }}
-
-                            {{ form_label(form.email) }} *
-                            {{ form_errors(form.email) }}
-                            {{ form_widget(form.email) }}
-
-                            {{ form_label(form.phone) }}
-                            {{ form_errors(form.phone) }}
-                            {{ form_widget(form.phone) }}
-
-                            {{ form_label(form.subject) }}
-                            {{ form_errors(form.subject) }}
-                            {{ form_widget(form.subject) }}
-
-                            {{ form_label(form.message) }} *
-                            {{ form_errors(form.message) }}
-                            {{ form_widget(form.message) }}
-
-                            {{ form_label(form.file) }}
-                            {{ form_errors(form.file) }}
-                            {{ form_widget(form.file) }}
-
-                            <button type="submit" class="btn btn-success">Отправить</button>
-
-                            {{ form_end(form) }}
-                            {#<form action="mail.php" method="post" autocomplete="on">
+                            <form action="/order/create" method="post" autocomplete="on" enctype="multipart/form-data" id="form">
                                 <label for="name">
-                                    Имя: *
-                                    <input type="input" id="name">
+                                    ФИО: *
+                                    {{ form_widget(form.fio) }}
                                 </label>
+                                <div class="alert alert-danger form_error" role="alert" id="fio_error">
+                                </div>
 
                                 <label for="address">
                                     Адрес: *
-                                    <input type="input" id="address">
+                                    {{ form_widget(form.address) }}
                                 </label>
+                                <div class="alert alert-danger form_error" role="alert" id="address_error">
+                                </div>
 
                                 <label for="email">
                                     E-mail адрес: *
-                                    <input type="email" id="email">
+                                    {{ form_widget(form.email) }}
                                 </label>
+                                <div class="alert alert-danger form_error" role="alert" id="email_error">
+                                </div>
 
                                 <label for="number">
                                     Телефон:
-                                    <input type="number" id="number" >
+                                    {{ form_widget(form.phone) }}
                                 </label>
+                                <div class="alert alert-danger form_error" role="alert" id="phone_error">
+                                </div>
 
                                 <label for="order">
                                     Тема: *
-                                    <input type="input" id="order" >
+                                    {{ form_widget(form.subject) }}
                                 </label>
+                                <div class="alert alert-danger form_error" role="alert" id="subject_error">
+                                </div>
 
                                 <label for="message">
                                     Сообщение: *
-                                    <textarea placeholder="Отправьте нам сообщение..." id="message"></textarea>
+                                    {{ form_widget(form.message) }}
                                 </label>
+                                <div class="alert alert-danger form_error" role="alert" id="message_error">
+                                </div>
 
                                 <label for="file">
                                     Прикрепить файл:
-                                    <input type="file" id="file" >
+                                    {{ form_widget(form.file) }}
                                 </label>
+                                <div class="alert alert-danger form_error" role="alert" id="file_error">
+                                </div>
 
                                 <input type="submit" value="Отправить" class="button">
-                            </form>#}
+                            </form>
                         </div>
                     </section>
                 </div>

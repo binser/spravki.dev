@@ -3,21 +3,31 @@ main_homepage:
     defaults: { _controller: MainBundle:Default:index }
 
 main_contact:
-    path:     /contacts
+    path:     /contacts/
     defaults: { _controller: MainBundle:Default:contacts }
 
 main_delivery:
-    path:     /delivery
+    path:     /delivery/
     defaults: { _controller: MainBundle:Default:delivery }
 
 main_price:
-    path:     /price
+    path:     /price/
     defaults: { _controller: MainBundle:Default:price }
 
 main_staff:
-    path:     /staff
+    path:     /staff/
     defaults: { _controller: MainBundle:Default:staff }
 
+main_order_create:
+    path:     /order/create
+    defaults: { _controller: MainBundle:Default:createOrder }
+    methods: POST
+
+main_posts_list:
+    path:     /category/medicina-i-zdorove/
+    defaults: { _controller: MainBundle:Default:postsList }
+
+
 main_spravka:
-    path:     /{spravkaUrl}
+    path:     /{url}/
     defaults: { _controller: MainBundle:Default:spravka }

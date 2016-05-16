@@ -15,7 +15,7 @@
                     <table width="100%">
                         {% for document in category.documents %}
                             <tr>
-                                <td><a href="{{ path('main_spravka', {'spravkaUrl': document.url}) }}">{{ document.name }}</a></td>
+                                <td><a href="{{ path('main_spravka', {'url': document.url}) }}">{{ document.name }}</a></td>
                                 <td>{{ document.price }}</td>
                             </tr>
                         {% endfor %}
