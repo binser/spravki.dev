@@ -87,14 +87,13 @@ class DefaultController extends Controller
             $mailer = $this->get('mailer');
 
             $message = \Swift_Message::newInstance()
-                ->setSubject('Çàêàç ñ ñàéòà msk-medspravki.ru')
+                ->setSubject('Ğ—Ğ°ĞºĞ°Ğ· Ñ ÑĞ°Ğ¹Ñ‚Ğ° msk-medspravki.ru')
                 ->setFrom(array('no-reply@sweet-smoke.org' => 'msk-medspravki'))
                 ->setTo(array('bins91@mail.ru', 'Nanat111@yandex.ru'))
                 ->setContentType('text/html')
                 ->setBody($this->renderView("MainBundle:Messages:new_order.html.twig",
                     array(
                         'fio' => $order->getFio(),
-                        'address' => $order->getAddress(),
                         'email' => $order->getEmail(),
                         'phone' => $order->getPhone(),
                         'subject' => $order->getSubject(),
@@ -102,7 +101,10 @@ class DefaultController extends Controller
                         'date' => $order->getDateCreate()
                     )
                 ));
-            $message->attach(\Swift_Attachment::fromPath($order->getAbsolutePath()));
+            	
+            if ($order->getPhoto() !== null) {
+                $message->attach(\Swift_Attachment::fromPath($order->getAbsolutePath()));
+            }
 
             $mailer->send($message);
 

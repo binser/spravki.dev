@@ -30,18 +30,13 @@ class Order
 
     /**
      * @ORM\Column(type="string")
-     */
-    protected $address;
-
-    /**
-     * @ORM\Column(type="string")
      *
      * @Assert\NotBlank()
      */
     protected $email;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      *
      * @Assert\Regex(
      *     pattern="/[\d\-\+]{3,15}/",
@@ -172,31 +167,6 @@ class Order
     {
         return $this->fio;
     }
-
-    /**
-     * Set address
-     *
-     * @param string $address
-     *
-     * @return Order
-     */
-    public function setAddress($address)
-    {
-        $this->address = $address;
-
-        return $this;
-    }
-
-    /**
-     * Get address
-     *
-     * @return string
-     */
-    public function getAddress()
-    {
-        return $this->address;
-    }
-
     /**
      * Set email
      *

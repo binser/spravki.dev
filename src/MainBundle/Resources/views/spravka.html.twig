@@ -7,10 +7,8 @@
 {% block content %}
     <section id="caption">
         <div class="container">
-            <h1>
-                Купить {{ spravka.name }} задним числом недорого -<br>
-                доступная услуга от Мед Центра "Msk-medspravki"
-            </h1>
+           </br>
+		   </br>
             <div class="row cf">
                 <div class="col-md-6 col-sm-6">
                     <div class="buy cf">
@@ -22,7 +20,9 @@
                 <div class="col-md-6 col-sm-6">
                     <div id="gallery">
                         <div id="panel">
-                            <img id="largeImage" src="{{ asset(spravka.image) }}" />
+                            <a href="{{ asset(spravka.image) }}" data-lightbox="one_photo">
+                                <img id="largeImage" src="{{ asset(spravka.image) }}" />
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -34,4 +34,14 @@
             {{ spravka.text|raw }}
         </div>
     </section>
+{% endblock %}
+
+{% block style %}
+    {{ parent() }}
+    <link href="{{ asset('lib/lightbox/lightbox.css') }}" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+{% block script %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('lib/lightbox/lightbox.js') }}"></script>
 {% endblock %}

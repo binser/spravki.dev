@@ -1,6 +1,7 @@
 <section id="popylar">
     <div class="container">
-        <h1>Популярные справки</h1>
+        <!-- 
+		<h1>Популярные справки</h1>
         <div class="row cf">
             {% for item in popular %}
             <div class="col-md-4 col-sm-6">
@@ -21,6 +22,7 @@
             </div>
             {% endfor %}
         </div>
+		-->
     </div>
 </section>
 
@@ -35,7 +37,7 @@
 
                 <div class="modal-body">
                     <section id="orders">
-                        <h1>Оформление заказа</h1>
+                        <p><font size=16; color="#00A0E3">Оформление заказа</font></p>
                         <p>Для заказа позвоните по номеру 8 495 969 47 07 или заполните форму ниже и мы свяжемся с вами.</p>
                         <div class="form">
                             <form action="/order/create" method="post" autocomplete="on" enctype="multipart/form-data" id="form">
@@ -44,13 +46,6 @@
                                     {{ form_widget(form.fio) }}
                                 </label>
                                 <div class="alert alert-danger form_error" role="alert" id="fio_error">
-                                </div>
-
-                                <label for="address">
-                                    Адрес: *
-                                    {{ form_widget(form.address) }}
-                                </label>
-                                <div class="alert alert-danger form_error" role="alert" id="address_error">
                                 </div>
 
                                 <label for="email">
@@ -68,7 +63,7 @@
                                 </div>
 
                                 <label for="order">
-                                    Тема: *
+                                    Название справки: *
                                     {{ form_widget(form.subject) }}
                                 </label>
                                 <div class="alert alert-danger form_error" role="alert" id="subject_error">
