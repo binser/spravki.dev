@@ -125,9 +125,14 @@ class DefaultController extends Controller
         }
     }
 
-    public function postsListAction()
+    public function postsListAction($url)
     {
-        $posts = $this->getDoctrine()->getRepository('MainBundle:Post')->findAll();
+        $category = $this->getDoctrine()->getRepository('MainBundle:CategoryPost')->findOneBy(array('url' => $url));
+        if (!$category) {
+            return $this->createNotFoundException();
+        }
+
+        $posts = $category->getPosts();
         return $this->render('MainBundle::posts_list.html.twig', array(
             'posts' => $posts
         ));

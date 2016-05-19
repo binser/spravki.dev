@@ -24,7 +24,7 @@ main_order_create:
     methods: POST
 
 main_posts_list:
-    path:     /category/medicina-i-zdorove/
+    path:     /category/{url}/
     defaults: { _controller: MainBundle:Default:postsList }
 
 

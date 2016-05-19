@@ -8,3 +8,15 @@ services:
     factory: ["@app.menu_builder", createMainMenu]
     tags:
       - { name: knp_menu.menu, alias: main }
+
+  admin.post:
+    class: MainBundle\Admin\CategoryPostAdmin
+    arguments: [~, MainBundle\Entity\CategoryPost, ~]
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: Статейник, label: Категории }
+
+  admin.video_report:
+    class: MainBundle\Admin\PostAdmin
+    arguments: [~, MainBundle\Entity\Post, SonataAdminBundle:CRUD]
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: Статейник, label: Посты }

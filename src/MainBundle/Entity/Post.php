@@ -36,6 +36,12 @@ class Post
     protected $text;
 
     /**
+     * @ORM\ManyToOne(targetEntity="MainBundle\Entity\CategoryPost", inversedBy="posts")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    protected $category;
+
+    /**
      * Get id
      *
      * @return integer
@@ -115,5 +121,29 @@ class Post
     public function getText()
     {
         return $this->text;
+    }
+
+    /**
+     * Set category
+     *
+     * @param \MainBundle\Entity\CategoryPost $category
+     *
+     * @return Post
+     */
+    public function setCategory(\MainBundle\Entity\CategoryPost $category = null)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \MainBundle\Entity\CategoryPost
+     */
+    public function getCategory()
+    {
+        return $this->category;
     }
 }

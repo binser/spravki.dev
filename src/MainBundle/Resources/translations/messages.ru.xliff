@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="ru" datatype="plaintext" original="">
+        <body>
+            <trans-unit id="Dashboard">
+                <source>Dashboard</source>
+                <target>Главная</target>
+            </trans-unit>
+            <trans-unit id="Link Add">
+                <source>link_add</source>
+                <target>Добавить новый</target>
+            </trans-unit>
+            <trans-unit id="Link List">
+                <source>link_list</source>
+                <target>Список</target>
+            </trans-unit>
+            <trans-unit id="Post List">
+                <source>Post List</source>
+                <target>Список постов</target>
+            </trans-unit>
+            <trans-unit id="Category Post List">
+                <source>Category Post List</source>
+                <target>Список категорий статейника</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

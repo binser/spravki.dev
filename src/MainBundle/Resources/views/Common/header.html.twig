@@ -10,13 +10,6 @@
         </div>
 
         <div class="collapse navbar-collapse" id="main_menu">
-            {#<ul class="nav navbar-nav">
-                <li><a href="index.php">Главная</a></li>
-                <li><a href="prajs-list.php">Прайс-лист</a></li>
-                <li><a href="dostavka-i-oplata.php">Доставка и оплата</a></li>
-                <li><a href="nashi-sotrudniki.php">Наши сотрудники</a></li>
-                <li><a href="kontakty.php">Контакты</a></li>
-            </ul>#}
             {{ knp_menu_render('main', {'currentClass': 'active', 'template': 'MainBundle:Menu:knp_menu.html.twig'}) }}
         </div>
     </nav>

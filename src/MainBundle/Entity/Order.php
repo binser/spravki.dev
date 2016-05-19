@@ -29,14 +29,14 @@ class Order
     protected $fio;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      *
-     * @Assert\NotBlank()
+     * @Assert\Email()
      */
     protected $email;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="string")
      *
      * @Assert\Regex(
      *     pattern="/[\d\-\+]{3,15}/",
